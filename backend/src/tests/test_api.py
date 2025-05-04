@@ -2,9 +2,6 @@ import pytest
 import tempfile
 import os
 
-from flask import Flask
-from flask.testing import FlaskClient
-
 from bank_api.models import Country, PrimaryBank, BranchBank, Base
 from bank_api.main import app
 from tests.testdb import get_engine, get_sessionmaker

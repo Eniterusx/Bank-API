@@ -40,18 +40,4 @@
     WORKDIR /app/src
     
     CMD ["uv", "run", "-m", "data_parser.parser"]
-
-    # Unit tests build ----------------
-    FROM base AS tests
-
-    WORKDIR /app
-
-    COPY src/bank_api/ src/bank_api/
-    COPY src/tests/ src/tests/
-
-    RUN uv pip install ".[unit_tests]"
-
-    WORKDIR /app/src
-
-    # CMD ["uv", "run", "-m", "tests.test_api"]
-    CMD ["pytest", "-v", "--tb=short", "--disable-warnings", "--maxfail=1", "--cov=bank_api", "--cov-report=term-missing:skip-covered", "tests/test_api.py"]
+    
