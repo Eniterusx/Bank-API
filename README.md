@@ -1,4 +1,5 @@
 # Bank-API
+Project created for Remitly Internship
 
 ## How to run
 ### Prerequisites
