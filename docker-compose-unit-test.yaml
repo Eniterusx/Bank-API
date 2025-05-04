@@ -1,0 +1,21 @@
+services:
+  test-db:
+    image: postgres
+    container_name: bank-api-test-db
+    restart: always
+    environment:
+      POSTGRES_DB: test_bank_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    tmpfs:
+      - /var/lib/postgresql/data
+    expose:
+      - 5433
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    ports:
+      - "5433:5432"
+
