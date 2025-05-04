@@ -308,7 +308,7 @@ def test_add_bank_empty_name(client, empty_db_session):
     data = resp.get_json()
     assert data["error"] == "Invalid value for bankName"
 
-def test_add_bank_invalid_data(client, empty_db_session):
+def test_add_bank_invalid_country_code(client, empty_db_session):
     invalid_bank = {
         "address": "Invalid Address",
         "bankName": "Invalid Bank",
@@ -322,6 +322,7 @@ def test_add_bank_invalid_data(client, empty_db_session):
     data = resp.get_json()
     assert data["error"] == "Invalid value for countryISO2"
 
+def test_add_bank_invalid_swift_code(client, empty_db_session):
     invalid_bank = {
         "address": "Invalid Address",
         "bankName": "Invalid Bank",
@@ -348,6 +349,7 @@ def test_add_bank_invalid_data(client, empty_db_session):
     data = resp.get_json()
     assert data["error"] == "Invalid value for swiftCode"
 
+def test_add_bank_invalid_name(client, empty_db_session):
     invalid_bank = {
         "address": "",
         "bankName": "", # Empty name
@@ -361,6 +363,7 @@ def test_add_bank_invalid_data(client, empty_db_session):
     data = resp.get_json()
     assert data["error"] == "Invalid value for bankName"
 
+def test_add_bank_invalid_headquarter_status(client, empty_db_session):
     invalid_bank = {
         "address": "Invalid Address",
         "bankName": "Invalid Bank",
