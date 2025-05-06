@@ -5,6 +5,7 @@ Project created for Remitly Internship
 ### Prerequisites
 - Docker
 - Docker Compose
+- uv (for unit tests)
 
 ### Steps
 1. Clone the repository
